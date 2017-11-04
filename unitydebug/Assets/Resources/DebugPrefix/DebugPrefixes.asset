@@ -17,7 +17,7 @@ MonoBehaviour:
   - IsEnabled: 0
     PrefixName: test
   - IsEnabled: 0
-    PrefixName: NewField
+    PrefixName: Work1
   - IsEnabled: 0
     PrefixName: NewField3
   - IsEnabled: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
   - IsEnabled: 0
     PrefixName: NewField6
   - IsEnabled: 0
-    PrefixName: NewField7
+    PrefixName: NewField
   - IsEnabled: 0
     PrefixName: NewField8
   - IsEnabled: 0

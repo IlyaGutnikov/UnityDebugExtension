@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 using UnityEditor;
 
@@ -66,6 +68,30 @@ namespace UnityDebug.DebugPrefixes
             return _debugPrefixList.GroupBy(n => n.PrefixName).Any(c => c.Count() > 1);
         }
 
+        private void CreateEnum()
+        {
+            var debugScriptsFolder = Application.dataPath + "/Scripts/DebugPrefix";
+
+            if (!Directory.Exists(debugScriptsFolder))
+            {
+                Directory.CreateDirectory(debugScriptsFolder);
+            }
+            var filePath = debugScriptsFolder + "/DebugPrefixEnum.cs";
+            var stringToWrite = "public enum DebugPrefixEnum { \n";
+            for (int i = 0; i < _debugPrefixList.Count; i++)
+            {
+                if (i != _debugPrefixList.Count - 1)
+                {
+                    stringToWrite += _debugPrefixList[i].PrefixName + ",\n";
+                }
+                else
+                {
+                    stringToWrite += _debugPrefixList[i].PrefixName + "\n" + "}";
+                }
+            }
+            File.WriteAllText(filePath, stringToWrite, Encoding.UTF8);
+        }
+
         void OnGUI()
         {
             if (_debugPrefixList == null) 
@@ -91,7 +117,7 @@ namespace UnityDebug.DebugPrefixes
             
             if (GUILayout.Button("Создать enum"))
             {
-                
+                CreateEnum();
             }
             EditorGUILayout.EndHorizontal();
             
