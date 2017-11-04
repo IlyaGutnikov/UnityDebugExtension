@@ -12,6 +12,27 @@ MonoBehaviour:
   m_Name: DebugPrefixes
   m_EditorClassIdentifier: 
   DebugPrefixes:
-  - Test1
-  - Test2
-  - Test3
+  - IsEnabled: 1
+    PrefixName: teat
+  - IsEnabled: 0
+    PrefixName: test
+  - IsEnabled: 0
+    PrefixName: NewField
+  - IsEnabled: 0
+    PrefixName: NewField3
+  - IsEnabled: 0
+    PrefixName: NewField4
+  - IsEnabled: 0
+    PrefixName: NewField5
+  - IsEnabled: 0
+    PrefixName: NewField6
+  - IsEnabled: 0
+    PrefixName: NewField7
+  - IsEnabled: 0
+    PrefixName: NewField8
+  - IsEnabled: 0
+    PrefixName: NewField9
+  - IsEnabled: 0
+    PrefixName: NewField10
+  - IsEnabled: 0
+    PrefixName: NewField11
