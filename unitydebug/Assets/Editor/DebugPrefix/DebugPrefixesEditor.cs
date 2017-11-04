@@ -55,7 +55,8 @@ namespace UnityDebug.DebugPrefixes
             }
 
             var ebabledPrefixes = _debugPrefixList.Where(x => x.IsEnabled);
-            Debug.EnabledPrefixes = ebabledPrefixes.ToArray();
+            _debugPrefix.EnabledPrefixes = new Prefix[ebabledPrefixes.ToArray().Length];
+            _debugPrefix.EnabledPrefixes = ebabledPrefixes.ToArray();
         }
 
         private bool CheckListForDuplicates()
@@ -98,11 +99,11 @@ namespace UnityDebug.DebugPrefixes
                 return;
 
             EditorGUILayout.BeginHorizontal();
-            if (GUILayout.Button("Обновить"))
+            if (GUILayout.Button("Refresh"))
             {
                 RefreshList();
             }
-            if (GUILayout.Button("Сохранить"))
+            if (GUILayout.Button("Save"))
             {
                 RefreshList();
                 if (CheckListForDuplicates())
@@ -115,7 +116,7 @@ namespace UnityDebug.DebugPrefixes
                 AssetDatabase.SaveAssets();
             }
             
-            if (GUILayout.Button("Создать enum"))
+            if (GUILayout.Button("(Re)Create enum"))
             {
                 CreateEnum();
             }
@@ -125,7 +126,7 @@ namespace UnityDebug.DebugPrefixes
 
             if (CheckListForDuplicates())
             {
-                GUILayout.Label("В списке есть дупликаты!");
+                GUILayout.Label("Prefixes have duplicates!");
             }
             _scrollPos =
                 EditorGUILayout.BeginScrollView(_scrollPos, GUILayout.Width(500));
@@ -138,7 +139,7 @@ namespace UnityDebug.DebugPrefixes
             }
             EditorGUILayout.EndScrollView();
 
-            if (GUILayout.Button("Добавить поле"))
+            if (GUILayout.Button("Add item"))
             {
                 _debugPrefixList.Add(new Prefix(false, "NewField" + _debugPrefixList.Count));
             }

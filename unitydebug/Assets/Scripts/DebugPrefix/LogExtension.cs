@@ -9,10 +9,17 @@ using UnityEngine;
 public static class Debug
 {
 
-    public static Prefix[] EnabledPrefixes;
+    static Prefix[] EnabledPrefixes;
 
     static bool IsEnable(DebugPrefixEnum prefix)
     {
+        if (EnabledPrefixes == null)
+        {
+            var prefixes = Resources.LoadAll<DebugPrefix>("DebugPrefix");
+            DebugPrefix debugPrefix = prefixes[0];
+            EnabledPrefixes = debugPrefix.EnabledPrefixes;
+        }
+
         return EnabledPrefixes.FirstOrDefault(x => x.PrefixName == prefix.ToString()) != null;
     }
 

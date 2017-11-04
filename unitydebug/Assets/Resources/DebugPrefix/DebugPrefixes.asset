@@ -14,7 +14,7 @@ MonoBehaviour:
   DebugPrefixes:
   - IsEnabled: 1
     PrefixName: teat
-  - IsEnabled: 0
+  - IsEnabled: 1
     PrefixName: test
   - IsEnabled: 0
     PrefixName: Work1
@@ -36,3 +36,8 @@ MonoBehaviour:
     PrefixName: NewField10
   - IsEnabled: 0
     PrefixName: NewField11
+  EnabledPrefixes:
+  - IsEnabled: 1
+    PrefixName: teat
+  - IsEnabled: 1
+    PrefixName: test

@@ -9,6 +9,8 @@ namespace UnityDebug.DebugPrefixes
     public class DebugPrefix : ScriptableObject
     {
         public Prefix[] DebugPrefixes;
+
+        public Prefix[] EnabledPrefixes;
         
         public DebugPrefix()
         {
