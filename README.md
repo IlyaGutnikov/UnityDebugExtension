@@ -9,9 +9,11 @@
 
 ## Управление тегами
 
-Управление тегами осуществляется при помощи меню, которое вызывается при помощи `Tools/DebugPrefixes`.
+Управление тегами осуществляется при помощи меню, по пути: `Tools/DebugPrefixes`.
 
 ### Назначение кнопок:
+
+![UI](https://raw.githubusercontent.com/IlyaGutnikov/UnityDebugExtension/master/images/1.png)
 
 * Refresh - обновляет список тегов. Пустой тег будет автоматически удален из списка;
 * Save - сохраняет список тегов и список включеных тегов в сериализуемый объект;
@@ -22,6 +24,8 @@
 ## Пример использования
 Данный код, выведет сообщение 1234567890, если тег `test` включен в окне выбора тегов.
 `Debug.LogError(DebugPrefixEnum.test, "1234567890".Colored(Colors.brown));`
+
+![example](https://raw.githubusercontent.com/IlyaGutnikov/UnityDebugExtension/master/images/2.png)
 
 ## Примечание
 
