@@ -91,6 +91,8 @@ namespace UnityDebug.DebugPrefixes
                 }
             }
             File.WriteAllText(filePath, stringToWrite, Encoding.UTF8);
+            AssetDatabase.ImportAsset(filePath);
+            AssetDatabase.Refresh();
         }
 
         void OnGUI()
